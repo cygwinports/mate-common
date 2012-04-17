@@ -1,0 +1,23 @@
+--- origsrc/mate-common-1.1.0/macros2/mate-autogen	2011-12-08 13:38:26.000000000 -0600
++++ src/mate-common-1.1.0/macros2/mate-autogen	2012-01-30 18:59:11.077748700 -0600
+@@ -310,7 +310,9 @@ done
+ #tell Mandrake autoconf wrapper we want autoconf 2.5x, not 2.13
+ WANT_AUTOCONF_2_5=1
+ export WANT_AUTOCONF_2_5
+-version_check autoconf AUTOCONF 'autoconf2.50 autoconf autoconf-2.53' $REQUIRED_AUTOCONF_VERSION \
++#tell Gentoo autoconf wrapper we want autoconf 2.5x, not 2.13
++export WANT_AUTOCONF=2.5
++version_check autoconf AUTOCONF 'autoconf autoconf-2.5x' $REQUIRED_AUTOCONF_VERSION \
+     "http://ftp.gnu.org/pub/gnu/autoconf/autoconf-$REQUIRED_AUTOCONF_VERSION.tar.gz"
+ AUTOHEADER=`echo $AUTOCONF | sed s/autoconf/autoheader/`
+ 
+@@ -412,7 +414,8 @@ for configure_ac in $configure_files; do
+ 	elif grep "^AM_GNU_GETTEXT" $basename >/dev/null; then
+ 	   if grep "^AM_GNU_GETTEXT_VERSION" $basename > /dev/null; then
+ 	   	printbold "Running autopoint..."
+-		autopoint --force || exit 1
++		eval gettext_$(grep ^version= $(which autopoint))
++		autopoint -V $gettext_version --force || exit 1
+ 	   else
+ 	    	printbold "Running $GETTEXTIZE... Ignore non-fatal messages."
+ 	    	echo "no" | $GETTEXTIZE --force --copy || exit 1
