@@ -1,5 +1,5 @@
---- origsrc/mate-common-1.1.0/macros2/mate-autogen	2011-12-08 13:38:26.000000000 -0600
-+++ src/mate-common-1.1.0/macros2/mate-autogen	2012-01-30 18:59:11.077748700 -0600
+--- a/macros/mate-autogen	2011-12-08 13:38:26.000000000 -0600
++++ b/macros/mate-autogen	2012-01-30 18:59:11.077748700 -0600
 @@ -310,7 +310,9 @@ done
  #tell Mandrake autoconf wrapper we want autoconf 2.5x, not 2.13
  WANT_AUTOCONF_2_5=1
