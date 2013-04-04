@@ -1,7 +1,7 @@
 inherit mate
 
 NAME="mate-common"
-VERSION=1.4.0
+VERSION=1.6.0
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="Common development files for MATE Desktop packages"
