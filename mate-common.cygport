@@ -1,8 +1,8 @@
 inherit mate
 
 NAME="mate-common"
-VERSION=1.6.1
-RELEASE=2
+VERSION=1.6.2
+RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Common development files for MATE Desktop packages"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
@@ -11,7 +11,6 @@ REQUIRES="autoconf automake coreutils gettext-devel libglib2.0-devel mate-doc-ut
 
 PATCH_URI="
 	1.1.0-cygwin.patch
-	1.6.1-automake114.patch
 "
 
 DIFF_EXCLUDES="Makefile.in aclocal.m4 configure install-sh missing"
