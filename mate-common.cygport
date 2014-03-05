@@ -1,7 +1,7 @@
 inherit mate
 
 NAME="mate-common"
-VERSION=1.6.2
+VERSION=1.8.0
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Common development files for MATE Desktop packages"
@@ -12,6 +12,8 @@ REQUIRES="autoconf automake coreutils gettext-devel libglib2.0-devel mate-doc-ut
 PATCH_URI="
 	1.1.0-cygwin.patch
 "
+
+ARCH=noarch
 
 DIFF_EXCLUDES="Makefile.in aclocal.m4 configure install-sh missing"
 
